@@ -1,0 +1,6 @@
+framework module YTXTest {
+  umbrella header "YTXTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

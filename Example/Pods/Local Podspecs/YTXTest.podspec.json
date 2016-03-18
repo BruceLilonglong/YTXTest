@@ -1,0 +1,25 @@
+{
+  "name": "YTXTest",
+  "version": "0.1.0",
+  "summary": "A short description of YTXTest.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/YTXTest",
+  "license": "MIT",
+  "authors": {
+    "lilonglong": "596927598@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/YTXTest.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "YTXTest": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+PODS:
+  - Kiwi (2.4.0)
+  - YTXTest (0.1.0)
+
+DEPENDENCIES:
+  - Kiwi
+  - YTXTest (from `../`)
+
+EXTERNAL SOURCES:
+  YTXTest:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  YTXTest: f7d7bb5848c8c47c19d89be989b5d08fdf412f76
+
+COCOAPODS: 0.39.0
