@@ -1,16 +1,16 @@
 {
   "name": "YTXTest",
-  "version": "0.1.0",
-  "summary": "A short description of YTXTest.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/YTXTest",
+  "version": "0.1.1",
+  "summary": "Test.",
+  "description": "subspec:NSArray, NSURL, UIImage, UITextView, UIAll 和 FoundationAll",
+  "homepage": "https://github.com/BruceLilonglong/YTXTest",
   "license": "MIT",
   "authors": {
     "lilonglong": "596927598@qq.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/YTXTest.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/BruceLilonglong/YTXTest.git",
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "7.0"
@@ -21,5 +21,53 @@
     "YTXTest": [
       "Pod/Assets/*.png"
     ]
-  }
+  },
+  "subspecs": [
+    {
+      "name": "NSArray",
+      "source_files": [
+        "Pod/Classes/**/NSArray+*.{h,m}"
+      ]
+    },
+    {
+      "name": "NSURL",
+      "source_files": [
+        "Pod/Classes/**/NSURL+*.{h,m}"
+      ]
+    },
+    {
+      "name": "UIImage",
+      "source_files": [
+        "Pod/Classes/**/UIImage+*.{h,m}"
+      ]
+    },
+    {
+      "name": "UITextView",
+      "source_files": [
+        "Pod/Classes/**/UITextView+*.{h,m}"
+      ]
+    },
+    {
+      "name": "UIAll",
+      "dependencies": {
+        "YTXTest/UIImage": [
+
+        ],
+        "YTXTest/UITextView": [
+
+        ]
+      }
+    },
+    {
+      "name": "FoundationAll",
+      "dependencies": {
+        "YTXTest/NSArray": [
+
+        ],
+        "YTXTest/NSURL": [
+
+        ]
+      }
+    }
+  ]
 }

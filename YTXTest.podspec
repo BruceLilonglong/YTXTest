@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "YTXTest"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "Test."
 
 # This description is used to generate tags and improve search results.
@@ -36,4 +36,41 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  NSArray = {:spec_name => "NSArray", :source_files =>['Pod/Classes/**/NSArray+*.{h,m}']}
+  
+  NSURL = {:spec_name => "NSURL", :source_files =>['Pod/Classes/**/NSURL+*.{h,m}']}
+  
+  UIImage = {:spec_name => "UIImage", :source_files =>['Pod/Classes/**/UIImage+*.{h,m}']}
+  
+  UITextView = {:spec_name => "UITextView", :source_files =>['Pod/Classes/**/UITextView+*.{h,m}']}
+  
+  UIAll = {:spec_name => "UIAll", :sub_dependency => [UIImage, UITextView]}
+  
+  FoundationAll = {:spec_name => "FoundationAll", :sub_dependency => [NSArray, NSURL]}
+  
+  $all_name = []
+  
+   $all_spec = [NSArray, NSURL, UIImage, UITextView, UIAll, FoundationAll]
+  
+  $all_spec.each do |spec|
+      s.subspec spec[:spec_name] do |ss|
+          
+          $all_name << spec[:spec_name]
+          
+          if spec[:source_files]
+              ss.source_files = spec[:source_files]
+          end
+          
+          if spec[:sub_dependency]
+              spec[:sub_dependency].each do |dep|
+                  ss.dependency "YTXTest/#{dep[:spec_name]}"
+              end
+          end
+          
+      end
+   end
+  
+  spec_names = $all_name[0...-1].join(", ") + " 和 " + $all_name[-1]
+  s.description = "subspec:#{spec_names}"
+  
 end
